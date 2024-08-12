@@ -1,0 +1,128 @@
+<p>product-add works!</p>
+<button routerLink="/products" class="btn btn-sm btn-dark">Back</button>
+<form [formGroup]="formProductAdd">
+    <div class="mb-3">
+        <label class="form-label">Enable Product</label>
+        <select class="form-select" formControlName="product_enable">
+            <option value="true" selected>Enable</option>
+            <option value="false">Disable</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="productName" class="form-label">Product Name</label>
+        <input type="text" id="productName" formControlName="product_name" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label for="productSku" class="form-label">Product SKU</label>
+        <input type="text" id="productSku" formControlName="product_sku" class="form-control text-uppercase">
+    </div>
+
+    <div class="mb-3">
+        <label for="productPrice" class="form-label">Price(inr)</label>
+        <input type="text" id="productPrice" formControlName="product_price" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label for="imageUpload" class="form-label">Main Image</label>
+        <input type="file" id="imageUpload" (change)="onFileSelected($event)" formControlName="product_main_image"
+            class="form-control">
+    </div>
+
+    <!-- <div>
+        <label for="productTax">Tax Class</label>
+        <select name="" id="productTax" formControlName="product_tax">
+            <option value="taxable">none</option>
+            <option value="nontaxable">Taxable Goods</option>
+        </select>
+    </div>
+    <div>
+        <label for="productQty">Quantity</label>
+        <input type="text" id="productQty" formControlName="product_qty">
+    </div>
+    <div>
+        <label for="stockStatus">Stock Status</label>
+        <select name="" id="stockStatus" formControlName="product_stock">
+            <option value="instock">In Stock</option>
+            <option value="outstock">Out of Stock</option>
+        </select>
+    </div>
+    <div>
+        <label for="weight">Weight</label>
+        <input type="text" id="weight" formControlName="product_weight">
+    </div>
+    <div>
+        <div>
+            <label for="width">Width</label>
+            <input type="text" id="width" formControlName="product_weight">
+        </div>
+        <div>
+            <label for="height">Height</label>
+            <input type="text" id="height" formControlName="product_height">
+        </div>
+        <div>
+            <label for="depth">Depth</label>
+            <input type="text" id="weight" formControlName="product_depth">
+        </div>
+    </div>
+    <div>
+        <label for="categ">Category</label>
+        <select name="" id="categ" formControlName="product_category">
+            <option value="none">In Stock</option>
+            <option value="none">Out of Stock</option>
+        </select>
+    </div>
+    <div>
+        <label for="subCateg">Subcategory</label>
+        <select name="" id="subCateg" formControlName="product_sub_catrgory">
+            <option value="none">In Stock</option>
+            <option value="none">Out of Stock</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="expDayeStart">Set Product as New From</label>
+        <div>
+            <input type="text" id="expDayeStart" formControlName="product_exp_start">
+        </div>
+        <div>
+            <input type="text" id="expDayeEnd" formControlName="product_exp_end">
+        </div>
+    </div>
+
+    <div>
+        <label for="manufactureCountry">Country of Manufacture</label>
+        <select name="" id="manufactureCountry" formControlName="product_manf_country">
+            <option value="none">In Stock</option>
+            <option value="none">Out of Stock</option>
+        </select>
+    </div>
+    <div>
+        <label for="manufactureCompany">Manufacturer</label>
+        <select name="" id="manufactureCompany" formControlName="product_manufacturer">
+            <option value="none">In Stock</option>
+            <option value="none">Out of Stock</option>
+        </select>
+    </div>
+    <div>
+        <label for="productColor">Color</label>
+        <select name="" id="productColor" formControlName="product_color">
+            <option value="none">In Stock</option>
+            <option value="none">Out of Stock</option>
+        </select>
+    </div>
+    <div>
+        <label for="productSize">Size</label>
+        <select name="" id="productSize" formControlName="product_size">
+            <option value="none">In Stock</option>
+            <option value="none">Out of Stock</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="productDescript">Short Description</label>
+        <textarea type="text" id="productDescript" formControlName="product_description"></textarea>
+    </div> -->
+    <button (click)="saveProductInfo()">Save</button>
+</form>

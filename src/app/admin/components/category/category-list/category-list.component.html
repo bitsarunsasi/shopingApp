@@ -1,0 +1,34 @@
+<p>category-list works!</p>
+<button routerLink="/category-add" class="btn btn-sm btn-primary">Add New</button>
+
+<ng-container *ngIf="categoryList.length == 0">
+    <div>
+        <h1>Empty</h1>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="categoryList.length != 0">
+    <div class="container-fluid">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Category Name</th>
+                    <th>Sort Order</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let category of categoryList;index as i">
+                    <td>{{category.categ_name}} </td>
+                    <td>{{category.categ_sort_order}}</td>
+                    <td>{{category.categ_status}}</td>
+                    <td>
+                        <button routerLink="/category-edit/{{category.id}}" class="btn btn-sm">Edit</button>
+                        <button (click)="deleteCategory(category.id)" class="btn btn-sm">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</ng-container>

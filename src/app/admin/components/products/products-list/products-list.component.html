@@ -1,0 +1,42 @@
+<p>products-list works!</p>
+
+<button routerLink="/product-add" class="btn btn-sm btn-primary">Add Product</button>
+
+<ng-container *ngIf="productsList.length === 0 ">
+    <div>
+        <h4>Empty Data</h4>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="productsList.length !== 0 ">
+    <table class="table table-bordered align-middle">
+        <thead>
+            <tr>
+                <th class="bg-secondary text-white fw-medium">ID</th>
+                <th class="bg-secondary text-white fw-medium">Name</th>
+                <th class="bg-secondary text-white fw-medium">SKU</th>
+                <th class="bg-secondary text-white fw-medium">Price</th>
+                <th width="40" class="bg-secondary text-white fw-medium text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of productsList | reverse; index as i">
+                <td>{{product.id}} </td>
+                <td>{{product.product_name}}</td>
+                <td>{{product.product_sku}}</td>
+                <td>{{product.product_price}}</td>
+                <td>
+                    <div class="d-flex justify-content-center">
+                        <button routerLink="/product-edit/{{product.id}}"
+                            class="btn btn-sm fs-6 p-1 me-2 border-0 lh-base">
+                            <i class="bi bi-pencil text-primary"></i>
+                        </button>
+                        <button (click)="deleteProduct(product.id)" class="btn btn-sm fs-6 p-1 border-0 lh-base">
+                            <i class="bi bi-trash text-danger"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>

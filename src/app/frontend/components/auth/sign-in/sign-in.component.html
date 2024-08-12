@@ -1,0 +1,47 @@
+<div class="position-relative bg-light w-100 min-vh-100">
+    <div class="column-row min-vh-100">
+        <div class="column-row__left">
+
+            <div class="auth-wrapper">
+                <div class="auth-wrapper__container shadow-sm">
+                    <div class="auth-wrapper__title text-dark">
+                        Sign in
+                    </div>
+                    <form [formGroup]="formSignin">
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Email</label>
+                            <input type="text" id="emailInput" formControlName="user_email"
+                                class="form-control rounded-1">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="passwordInput">Password</label>
+                            <input type="text" id="passwordInput" formControlName="user_password"
+                                class="form-control rounded-1">
+                        </div>
+
+
+                        <div class="d-block mb-3">
+                            <button (click)="signIn()" class="btn btn-dark btn-lg w-100 rounded-1">
+                                Sign in
+                            </button>
+                        </div>
+                        <div>
+                            <span class="text-muted">
+                                Don't have an account?
+                            </span>
+                            <a href="#" routerLink="/sign-up" class="text-primary">
+                                Sign up in
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <!-- <div class="column-row__right overflow-hidden">
+            <img src="../../../../../assets/img/react.jpg" class="object-fit-cover w-100 h-100" alt="">
+        </div> -->
+    </div>
+    <!--  -->
+</div>

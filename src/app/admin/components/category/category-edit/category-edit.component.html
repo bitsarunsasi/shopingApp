@@ -1,0 +1,40 @@
+<p>category-edit works!</p>
+<button routerLink="/category" class="btn btn-sm btn-dark">Back</button>
+<div>
+    <form [formGroup]="formEditCategory">
+        <div class="mb-3">
+            <label for="categEnable" class="form-label">
+                Enable Category
+            </label>
+            <select class="form-select" aria-label="categEnable" formControlName="categ_status">
+                <option selected value="true">Enable</option>
+                <option value="false">Disable</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="categNameInput" class="form-label">
+                <span>Category Name</span>
+                <span class="text-danger">*</span>
+            </label>
+            <input type="text" id="categNameInput" formControlName="categ_name" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="categDescInput" class="form-label">
+                Category Description
+            </label>
+            <textarea name="" id="categDescInput" formControlName="categ_description" class="form-control"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="categSortOrder" class="form-label">
+                Category Sort Order
+            </label>
+            <input type="text" id="categSortOrder" formControlName="categ_sort_order" class="form-control">
+        </div>
+        <div>
+            <button (click)="updateData()">Save</button>
+        </div>
+    </form>
+</div>

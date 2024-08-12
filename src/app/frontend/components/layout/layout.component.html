@@ -1,0 +1,71 @@
+<app-header></app-header>
+
+<main>
+    <div style="height: 450px;" class="my-4">
+        <div class="container-fluid h-100">
+            <img src="../../../../assets/img/react.jpg" class="object-fit-cover w-100 h-100" alt="image">
+        </div>
+    </div>
+
+    <div class="container-fluid mb-4">
+        <div class="text-capitalize">
+            <h5>Furnitures</h5>
+        </div>
+        <hr>
+        <div class="row">
+            <div *ngFor="let product of productList | category :'furniture';index as i"
+                class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                <div class="card h-100">
+                    <div class="card-image">
+                        <img src="{{product.thumbnail}}" alt="">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">{{product.title}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mb-4">
+        <div class="text-capitalize">
+            <h5>groceries</h5>
+        </div>
+        <hr>
+        <div class="row">
+            <div *ngFor="let product of productList | category :'groceries';index as i"
+                class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                <div class="card h-100">
+                    <div class="card-image">
+                        <img src="{{product.thumbnail}}" alt="">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">{{product.title}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="text-capitalize">
+            <h5>fragrances</h5>
+        </div>
+        <hr class="opacity-25">
+        <div class="row">
+            <div *ngFor="let product of productList | category :'fragrances';index as i"
+                class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                <div class="card h-100">
+                    <div class="card-image">
+                        <img src="{{product.thumbnail}}" alt="">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">{{product.title}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>

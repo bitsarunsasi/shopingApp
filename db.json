@@ -1,0 +1,19 @@
+{
+  "products": [],
+  "category": [
+    {
+      "categ_status": "true",
+      "categ_name": "Smart Phone",
+      "categ_description": "Smartphone devices 2021",
+      "categ_sort_order": "1",
+      "id": 1
+    },
+    {
+      "categ_status": "true",
+      "categ_name": "Shirt",
+      "categ_description": "Clothing material",
+      "categ_sort_order": "2",
+      "id": 2
+    }
+  ]
+}
